@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local project ignores
+venv/
+__pycache__/
+data/
+*.pyc
