@@ -154,7 +154,7 @@ def run_experiment(name, configs, device, writer):
         print(f"  Running: {cfg}")
         loader = make_loader(**{k: v for k, v in cfg.items() if k != "label"})
         metrics = measure_config(loader, device)
-        row = {"experiment": name, **cfg, **metrics}
+        row = {"experiment": name, **{k: v for k, v in cfg.items() if k != "data_dir"}, **metrics}
         writer.writerow(row)
         print(f"    → {metrics}")
 
